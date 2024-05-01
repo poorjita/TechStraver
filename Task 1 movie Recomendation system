@@ -1,0 +1,21 @@
+movie_recommendations = {
+    "action": ["The Dark Knight", "Inception", "Mad Max: Fury Road"],
+    "comedy": ["Superbad", "The Hangover", "Bridesmaids"],
+    "drama": ["The Shawshank Redemption", "Forrest Gump", "The Godfather"],
+    "horror": ["The Exorcist", "Get Out", "Hereditary"]
+}
+
+# Function to recommend a movie based on user input
+def recommend_movie(genre):
+    if genre.lower() in movie_recommendations:
+        recommendations = movie_recommendations[genre.lower()]
+        print(f"If you like {genre} movies, you should watch:")
+        for movie in recommendations:
+            print("-", movie)
+    else:
+        print("Sorry, we don't have recommendations for that genre.")
+
+# Main program
+if __name__ == "__main__":
+    user_genre = input("What genre of movie are you in the mood for? (action/comedy/drama/horror): ")
+    recommend_movie(user_genre)
