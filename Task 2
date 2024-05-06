@@ -1,0 +1,27 @@
+def categorize_sentiment(text, positive_lexicon, negative_lexicon):
+    # Tokenization
+    words = text.split()
+
+    # Scoring
+    score = 0
+    for word in words:
+        if word in positive_lexicon:
+            score += 1
+        elif word in negative_lexicon:
+            score -= 1
+
+    # Classification
+    if score > 0:
+        return "Positive"
+    elif score < 0:
+        return "Negative"
+    else:
+        return "Neutral"
+
+# Example usage:
+positive_lexicon = {"good", "happy", "joyful"}
+negative_lexicon = {"bad", "sad", "unhappy"}
+
+text = "This is a very good day."
+sentiment = categorize_sentiment(text, positive_lexicon, negative_lexicon)
+print(sentiment)  # Output: Positive
