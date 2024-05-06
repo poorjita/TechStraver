@@ -1,0 +1,18 @@
+import numpy as np
+from sklearn.linear_model import LinearRegression
+
+# Sample previous data
+X_train = np.array([[1], [2], [3], [4], [5]])
+y_train = np.array([2, 4, 5, 4, 5])
+
+# Create and fit the model
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+# Sample future data to predict
+X_test = np.array([[6], [7]])
+
+# Predict future values
+y_pred = model.predict(X_test)
+
+print("Predictions for future data:", y_pred)
